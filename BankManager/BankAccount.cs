@@ -39,4 +39,8 @@ public class BankAccount {
     public void ReceiveMoney(double amount) {
         _balance += amount;
     }
+
+    public override string ToString() {
+        return $"{_userName}\t{_accountNumber}\t{_balance},-";
+    }
 }
