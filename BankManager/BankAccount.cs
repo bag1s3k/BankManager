@@ -19,9 +19,12 @@ public class BankAccount {
     }
     
     private string GenerateAccountNumber() {
-        long firstPart = rnd.NextInt64(999999999);
+        while (true) {
+            string accNum = $"{rnd.NextInt64(1000000000, 9999999999)} / {_banksNumbers[rnd.Next(_banksNumbers.Length)]}";
 
-        return $"{firstPart} / {_banksNumbers[rnd.Next(_banksNumbers.Length)]}";
+            if (Database.DatabaseItems.Any(acc => acc._accountNumber != accNum))
+                return accNum;
+        }
     }
 
     private string GenerateUserName() => $"{_firstNames[rnd.Next(_firstNames.Length)]} {_lastNames[rnd.Next(_lastNames.Length)]}";
