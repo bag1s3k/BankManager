@@ -22,7 +22,7 @@ public class BankAccount {
         while (true) {
             string accNum = $"{rnd.NextInt64(1000000000, 9999999999)} / {_banksNumbers[rnd.Next(_banksNumbers.Length)]}";
 
-            if (Database.DatabaseItems.Any(acc => acc._accountNumber != accNum))
+            if (Database.DatabaseItems.All(acc => acc._accountNumber != accNum))
                 return accNum;
         }
     }
