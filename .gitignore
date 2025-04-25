@@ -1,3 +1,4 @@
 BankManager/bin/
 BankManager/obj/
 .idea/
+*.DotSettings.user
