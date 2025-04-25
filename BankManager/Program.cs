@@ -2,6 +2,7 @@
 
 class Program {
     static void Main(string[] args) {
-        Console.WriteLine("Hello, World!");
+        Database.DatabaseItems.Add(new BankAccount());
+        Console.WriteLine(Database.DatabaseItems[0]);
     }
 }

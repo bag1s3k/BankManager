@@ -1,5 +1,5 @@
 ﻿namespace BankManager;
 
-public class Database {
-    
+public static class Database {
+    public static List<BankAccount> DatabaseItems { get; set; } = new List<BankAccount>();
 }
